@@ -2,12 +2,12 @@ import React, { FC, Fragment, useState } from 'react';
 import 'react-native-gesture-handler';
 import { StatusBar, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import MainNavigator from './MainNavigator';
 import { PersistGate } from 'redux-persist/integration/react';
-import { connect, Provider as ReduxProvider } from 'react-redux';
+import { connect, Provider as ReduxProvider, useSelector } from 'react-redux';
 import getStore, { RootState } from './redux/store';
 import { enableScreens } from 'react-native-screens';
 import { useOnce } from './utils/hooks';
+import MainNavigator from './components/MainNavigator';
 
 enableScreens();
 

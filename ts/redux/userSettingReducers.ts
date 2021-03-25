@@ -15,10 +15,10 @@ const DARK_THEME: Theme = {
 	colors: {
 		primary: 'black',
 		background: 'black',
-		card: 'red',
+		card: '#0e0e0e',
 		text: 'white',
 		border: 'gray',
-		notification: 'blue',
+		notification: 'black',
 	},
 };
 
@@ -27,10 +27,10 @@ const LIGHT_THEME: Theme = {
 	colors: {
 		primary: 'white',
 		background: 'white',
-		card: 'red',
+		card: '#111111',
 		text: 'black',
 		border: 'gray',
-		notification: 'blue',
+		notification: 'black',
 	},
 };
 

@@ -5,10 +5,12 @@ import { encryptTransform } from 'redux-persist-transform-encrypt';
 import { getOrCreateKey } from '../utils/encryption';
 import { AuthInfo, authInfo } from './authReducers';
 import { UserSettings, userSettings } from './userSettingReducers';
+import { Navigation, navigation } from './navigationReducers';
 
 export type RootState = {
 	authInfo: AuthInfo;
 	userSettings: UserSettings;
+	navigation: Navigation;
 };
 
 export type StoreInfo = { store: Store<RootState>; persistor: Persistor };
@@ -16,7 +18,7 @@ export type StoreInfo = { store: Store<RootState>; persistor: Persistor };
 export default async function getStore(): Promise<StoreInfo> {
 	const key = await getOrCreateKey();
 
-	const reducers = persistReducer<RootState>(
+	const reducers = persistReducer(
 		{
 			key: 'root',
 			storage: AsyncStorage,
@@ -28,6 +30,7 @@ export default async function getStore(): Promise<StoreInfo> {
 			],
 		},
 		combineReducers({
+			navigation,
 			authInfo,
 			userSettings,
 		}),
