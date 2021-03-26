@@ -1,8 +1,6 @@
 import React, { memo, ReactElement } from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { FC } from 'react';
-import ExploreView from './explore/ExploreView';
-import AlbumsView from './albums/AlbumsView';
 import { Pressable, View, Text } from 'react-native';
 import {
 	DiscIcon,
@@ -21,6 +19,8 @@ import { Navigation } from '../redux/navigationReducers';
 import { useOnce } from '../utils/hooks';
 import ArtistsView from './artists/ArtistsView';
 import { HLine } from './common/Line';
+import ExploreNavigator from './explore/ExploreNavigator';
+import AlbumsView from './albums/AlbumsView';
 import SongsView from './songs/SongsView';
 import PlaylistsView from './playlists/PlaylistsView';
 import RecentlyView from './recently/RecentlyView';
@@ -33,7 +33,7 @@ const DrawerNavigator: FC = () => {
 			initialRouteName="search"
 			drawerContent={({ navigation }) => <DrawerContent navigation={navigation} />}
 		>
-			<Drawer.Screen name="explore" component={ExploreView} />
+			<Drawer.Screen name="explore" component={ExploreNavigator} />
 			<Drawer.Screen name="albums" component={AlbumsView} />
 			<Drawer.Screen name="artists" component={ArtistsView} />
 			<Drawer.Screen name="songs" component={SongsView} />
@@ -66,7 +66,7 @@ const DrawerContent: FC<any> = memo(({ navigation }) => {
 				<Text style={tailwind('text-gray-200 text-2xl font-bold')}>US</Text>
 				<Text style={tailwind('text-gray-400 ml-2 mb-1 self-end')}>Music player</Text>
 			</View>
-			<Text style={tailwind('text-white font-bold ml-3 my-2')}>Browsers</Text>
+			<Text style={tailwind('text-white font-bold ml-3 my-2')}>Colections</Text>
 			<DrawerItem
 				icon={<SearchIcon stroke="white" strokeWidth={1.8} />}
 				text="explore"

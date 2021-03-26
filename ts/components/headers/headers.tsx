@@ -13,7 +13,7 @@ const MenuButton: FC<{ onPress: () => void }> = ({ onPress }) => (
 	<Pressable
 		onPress={onPress}
 		android_ripple={{ color: 'gray', radius: 22 }}
-		style={tailwind('flex flex-row w-16 rounded-full p-2 items-center justify-center')}
+		style={tailwind('flex flex-row w-16 rounded-full p-3 items-center justify-center')}
 	>
 		<MenuIcon stroke="#ffffff" width={26} height={26} />
 	</Pressable>
